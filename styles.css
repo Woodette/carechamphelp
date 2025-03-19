@@ -1,13 +1,22 @@
+/* 🔹 Make article responsive */
 article {
-    width: 700px;
+    width: 90%; /* Use percentage instead of fixed width */
+    max-width: 700px;
     margin: auto;
     background-color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 20px;
+    padding: 15px;
     border-radius: 10px;
 }
-   
+
+/* 🔹 Responsive Logo */
+article img {
+    max-width: 60%; /* Make logo smaller on mobile */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the logo */
+}
+
+/* 🔹 Keep the background gradient */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -17,60 +26,64 @@ body {
     background-attachment: fixed;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
+/* 🔹 Make the grid responsive */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Auto adjusts */
     gap: 10px;
-    width: 100%;  /* Adjusted width to fit article */
-    max-width: 600px;
+    width: 100%; /* Ensure it scales */
+    max-width: 500px;
     margin: auto;
-    text-align: center;
     padding: 20px;
 }
 
+/* 🔹 Adjust grid items */
 .grid-item {
-    height: 140px; /* Slightly increased height */
+    height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(144deg, rgb(28, 112, 187), rgb(67, 180, 248)); /* Gradient applied */
+    background: linear-gradient(144deg, rgb(28, 112, 187), rgb(67, 180, 248));
     border-radius: 8px;
     transition: transform 0.2s ease, background 0.3s ease;
     padding: 15px;
-    color: white; /* Ensuring text is visible */
+    color: white;
 }
 
-.grid-item:hover {
-    transform: scale(1.05);
-    background: linear-gradient(144deg, rgb(67, 180, 248), rgb(28, 112, 187)); /* Swap gradient on hover */
-}
-
-.divider {
-    height: 2px;
-    background: black; /* Make divider more visible */
-    grid-column: span 2;
-    margin: 10px 0;
-}
-
-.grid-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
+/* 🔹 Make text links easier to read */
 .grid-item a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 14px; /* Slightly smaller font for mobile */
     transition: color 0.3s ease;
 }
 
-.grid-item a:hover {
-    color: yellow;
+/* 🔹 Responsive divider */
+.divider {
+    height: 2px;
+    background: black;
+    grid-column: span 2;
+    margin: 10px 0;
+}
+
+/* 🔹 Make it fully mobile-friendly */
+@media (max-width: 600px) {
+    article img {
+        max-width: 80%; /* Even smaller on very small screens */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        max-width: 90%;
+    }
+
+    .grid-item {
+        height: 120px; /* Adjusted for better spacing */
+    }
+
+    .grid-item a {
+        font-size: 16px; /* Slightly bigger for readability */
+    }
 }
