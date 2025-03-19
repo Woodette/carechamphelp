@@ -10,7 +10,7 @@ article {
 
 /* 🔹 Logo - Scales Properly */
 article img {
-    max-width: 60%; /* Keeps logo from being too wide */
+    max-width: 70%; /* Keeps logo from being too wide */
     height: auto;
     display: block;
     margin: 0 auto; /* Centers logo */
@@ -54,7 +54,7 @@ body {
 .grid-item i {
     font-size: 2.2rem; /* Icon size */
     margin-bottom: 8px;
-    background: linear-gradient(45deg, #4CAF50, #c6f195);
+    background: linear-gradient(45deg, rgb(76, 175, 80), rgb(198, 241, 149), rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background 0.3s ease;
