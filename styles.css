@@ -1,20 +1,11 @@
-:root {
-    --lightblue-color: #43B4F8;
-    --orange-color: #D5870D;
-    --darkblue-color: #1C70BB;
-    --darkgray-color: #3E3E3C;
-    --lighterblue-color: #F8F9FA;
-}
-
 article {
-
     width: 700px;
     margin: auto;
     background-color: white;
     padding-left: 15px;
     padding-right: 15px;
-
-    
+    padding-bottom: 20px;
+    border-radius: 10px;
 }
    
 body {
@@ -22,7 +13,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right,rgb(67, 180, 248, 1),rgb(28, 112, 187, 0), rgb(255, 255, 255)) ;
+    background: linear-gradient(to bottom right, rgb(67, 180, 248, 1), rgb(28, 112, 187, 0), rgb(255, 255, 255));
     background-attachment: fixed;
 }
 
@@ -31,43 +22,39 @@ img {
     height: auto;
 }
 
-
-
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 10px;
-    width: 60%;
-    max-width: 500px;
+    width: 100%;  /* Adjusted width to fit article */
+    max-width: 600px;
+    margin: auto;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
 }
 
 .grid-item {
-    height: 120px; /* Increased height */
+    height: 140px; /* Slightly increased height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(144deg, rgb(28, 112, 187), rgb(67, 180, 248)); /* Gradient applied */
     border-radius: 8px;
     transition: transform 0.2s ease, background 0.3s ease;
     padding: 15px;
+    color: white; /* Ensuring text is visible */
 }
 
 .grid-item:hover {
-    background: rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
+    background: linear-gradient(144deg, rgb(67, 180, 248), rgb(28, 112, 187)); /* Swap gradient on hover */
 }
 
 .divider {
     height: 2px;
-    background: white;
-    grid-column: span 2; /* Spans both columns */
+    background: black; /* Make divider more visible */
+    grid-column: span 2;
     margin: 10px 0;
 }
 
@@ -77,13 +64,13 @@ img {
     margin-bottom: 10px;
 }
 
-a {
+.grid-item a {
     text-decoration: none;
     color: white;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-a:hover {
+.grid-item a:hover {
     color: yellow;
 }
