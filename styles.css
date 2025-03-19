@@ -1,6 +1,6 @@
-/* 🔹 Make article responsive */
+/* 🔹 Article Styling - Responsive Width */
 article {
-    width: 90%; /* Use percentage instead of fixed width */
+    width: 80%; /* Allows flexibility */
     max-width: 700px;
     margin: auto;
     background-color: white;
@@ -8,17 +8,17 @@ article {
     border-radius: 10px;
 }
 
-/* 🔹 Responsive Logo */
+/* 🔹 Logo - Scales Properly */
 article img {
-    max-width: 60%; /* Make logo smaller on mobile */
+    max-width: 60%; /* Keeps logo from being too wide */
     height: auto;
     display: block;
-    margin: 0 auto; /* Center the logo */
+    margin: 0 auto; /* Centers logo */
 }
 
-/* 🔹 Keep the background gradient */
+/* 🔹 Body Background Gradient */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -26,41 +26,62 @@ body {
     background-attachment: fixed;
 }
 
-/* 🔹 Make the grid responsive */
+/* 🔹 Grid Layout - Stays 2 Columns */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Auto adjusts */
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
     gap: 10px;
-    width: 100%; /* Ensure it scales */
+    width: 90%;
     max-width: 500px;
     margin: auto;
     padding: 20px;
 }
 
-/* 🔹 Adjust grid items */
+/* 🔹 Grid Items */
 .grid-item {
     height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(144deg, rgb(28, 112, 187), rgb(67, 180, 248));
+    background: linear-gradient(144deg, rgb(28, 112, 187), rgb(67, 180, 248)); /* Gradient background */
     border-radius: 8px;
     transition: transform 0.2s ease, background 0.3s ease;
     padding: 15px;
     color: white;
 }
 
-/* 🔹 Make text links easier to read */
+.grid-item i {
+    font-size: 2.2rem; /* Icon size */
+    margin-bottom: 8px;
+    background: linear-gradient(45deg, #4CAF50, #c6f195);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.3s ease;
+}
+
+
+/* 🔹 Keep Text Readable */
 .grid-item a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 14px; /* Slightly smaller font for mobile */
+    font-size: 18px;
     transition: color 0.3s ease;
 }
 
-/* 🔹 Responsive divider */
+/* 🔹 Change Icon Color on Hover */
+.grid-item:hover i {
+    color: #800080; /* Purple on hover */
+}
+
+/* 🔹 Hover Effect */
+.grid-item:hover {
+    transform: scale(1.05);
+    background: linear-gradient(144deg, rgb(67, 180, 248), rgb(28, 112, 187));
+}
+
+/* 🔹 Divider Styling */
 .divider {
     height: 2px;
     background: black;
@@ -68,22 +89,28 @@ body {
     margin: 10px 0;
 }
 
-/* 🔹 Make it fully mobile-friendly */
+/* 🔹 Responsive Adjustments */
 @media (max-width: 600px) {
+    article {
+        width: 95%; /* Wider for mobile */
+    }
+
     article img {
-        max-width: 80%; /* Even smaller on very small screens */
+        max-width: 70%; /* Adjusts logo for smaller screens */
     }
 
     .grid-container {
-        grid-template-columns: 1fr; /* Single column for small screens */
-        max-width: 90%;
+        width: 100%; /* Uses full width on mobile */
+        max-width: 400px;
+        gap: 5px;
     }
 
     .grid-item {
-        height: 120px; /* Adjusted for better spacing */
+        height: 120px; /* Slightly smaller for better spacing */
+        font-size: 14px;
     }
 
     .grid-item a {
-        font-size: 16px; /* Slightly bigger for readability */
+        font-size: 16px; /* Bigger for readability */
     }
 }
