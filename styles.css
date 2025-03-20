@@ -54,11 +54,19 @@ body {
 .grid-item i {
     font-size: 2.2rem; /* Icon size */
     margin-bottom: 8px;
-    background: linear-gradient(45deg, rgb(76, 175, 80), rgb(198, 241, 149), rgb(255, 255, 255));
+    background: linear-gradient(45deg, #4caf50, #ffffff);
+    
+    /* Standard property for wider support */
+    background-clip: text;
     -webkit-background-clip: text;
+    
+    /* Ensures the text is transparent to show gradient */
     -webkit-text-fill-color: transparent;
+    color: transparent; /* Standard fallback */
+    
     transition: background 0.3s ease;
 }
+
 
 
 /* 🔹 Keep Text Readable */
@@ -88,6 +96,16 @@ body {
     grid-column: span 2;
     margin: 10px 0;
 }
+
+
+.fancy-divider {
+    height: 10px; /* Thickness of the divider */
+    background: linear-gradient(to right, #4CAF50, #800080); /* Green to Purple */
+    border-radius: 3px; /* Smooth edges */
+    margin: 20px auto; /* Spacing */
+    width: 80%; /* Keeps it balanced */
+}
+
 
 /* 🔹 Responsive Adjustments */
 @media (max-width: 600px) {
