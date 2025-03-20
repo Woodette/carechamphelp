@@ -90,30 +90,6 @@ body {
 }
 
 
-/* 🔹 Footer Styling */
-footer {
-    text-align: center;
-    padding: 10px;
-    background: linear-gradient(to right, rgb(76, 175, 80), rgb(198, 241, 149), rgb(255, 255, 255); /* Gradient background */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-}
-
-/* 🔹 Footer Image Styling */
-footer img {
-    max-width: 15px; /* Adjust as needed */
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-/* 🔹 Hover Effect */
-footer a:hover img {
-    transform: scale(1.1);
-}
-
-
 
 /* 🔹 Responsive Adjustments */
 @media (max-width: 600px) {
